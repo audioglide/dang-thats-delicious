@@ -21,7 +21,7 @@ exports.myMiddleware = (req, res, next) => {
 }
 
 exports.homePage = (req, res) => {
-	console.log(req.name);
+	//console.log(req.name);
 	res.render('index');
 }
 
@@ -79,7 +79,7 @@ exports.getStoreBySlug = async (req, res, next) =>{
 	res.render('store', {store, title:store.name});
 }
 
-exports.getStoresByTag  = async(req, res) => {
+exports.getStoresByTag  = async (req, res) => {
 	const tag = req.params.tag;
 	const tagQuery = tag || {$exists: true}
 	const tagsPromise = Store.getTagsList();
